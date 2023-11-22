@@ -31,8 +31,8 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             sudo yum -y update
-            sudo yum install -y apache2
-            sudo systemctl start apache2
-            sudo systemctl enable apache2
+            sudo yum install -y httpd
+            sudo systemctl start httpd
+            sudo systemctl enable httpd
             cd home
             sudo mv * /var/www/html
